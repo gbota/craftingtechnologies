@@ -116,7 +116,11 @@
     }
 
     h1 .accent { color: var(--accent); }
-    h1 .nowrap { white-space: nowrap; }
+    h1 .line { display: block; }
+    h1 .hub {
+      font-size: clamp(20px, 7.2vw, 60px);
+      white-space: nowrap;
+    }
 
     p.lead {
       font-size: clamp(15px, 2.4vw, 18px);
@@ -164,7 +168,11 @@
 
     <div class="wordmark-sub">Technologies</div>
 
-    <h1>We're <span class="accent">crafting</span> the new <span class="nowrap">Super Technologies Hub</span> in Cluj&#8209;Napoca</h1>
+    <h1>
+      <span class="line">We're <span class="accent">crafting</span> the new</span>
+      <span class="line hub">Super Technologies Hub</span>
+      <span class="line">in Cluj&#8209;Napoca</span>
+    </h1>
 
     <p class="lead">
       We're growing our team and have multiple open positions for
