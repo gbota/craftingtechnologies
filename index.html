@@ -24,7 +24,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body { height: 100%; }
+    html, body { height: 100%; overflow-x: clip; }
 
     body {
       background: var(--bg);
@@ -116,6 +116,7 @@
     }
 
     h1 .accent { color: var(--accent); }
+    h1 .nowrap { white-space: nowrap; }
 
     p.lead {
       font-size: clamp(15px, 2.4vw, 18px);
@@ -163,7 +164,7 @@
 
     <div class="wordmark-sub">Technologies</div>
 
-    <h1>We're <span class="accent">crafting</span> the new Super Technologies Hub in Cluj&#8209;Napoca</h1>
+    <h1>We're <span class="accent">crafting</span> the new <span class="nowrap">Super Technologies Hub</span> in Cluj&#8209;Napoca</h1>
 
     <p class="lead">
       We're growing our team and have multiple open positions for
