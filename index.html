@@ -35,7 +35,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
       position: relative;
     }
 
@@ -79,7 +79,7 @@
       z-index: 1;
       text-align: center;
       padding: 32px;
-      max-width: 640px;
+      max-width: 780px;
       animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
@@ -98,8 +98,8 @@
     .wordmark-sub {
       font-size: clamp(16px, 2.4vw, 40px);
       font-weight: 500;
-      letter-spacing: 0.42em;
-      text-indent: 0.42em; /* compensate tracking so it stays centered */
+      letter-spacing: 0.67em;
+      text-indent: 0.67em; /* compensate tracking so it stays centered */
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 48px;
@@ -108,9 +108,11 @@
     h1 {
       font-size: clamp(28px, 6vw, 48px);
       font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.15;
       letter-spacing: -0.02em;
-      margin-bottom: 18px;
+      max-width: 660px;
+      margin: 0 auto 18px;
+      text-wrap: balance;
     }
 
     h1 .accent { color: var(--accent); }
