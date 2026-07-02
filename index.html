@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crafting Technologies — Coming Soon</title>
+  <meta name="description" content="Crafting Technologies — something is being built. Coming soon." />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crafting Technologies" />
+  <meta property="og:description" content="Something is being built. Coming soon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://craftingtechnologies.xyz" />
+
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --fg: #f5f5f7;
+      --muted: #8a8a99;
+      --accent: #e11d2a; /* Superbet red */
+      --ring: rgba(225, 29, 42, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient glow */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      width: 900px;
+      height: 900px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, var(--ring) 0%, transparent 60%);
+      filter: blur(40px);
+      opacity: 0.6;
+      pointer-events: none;
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    /* Subtle grid */
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(circle at 50% 40%, black 0%, transparent 75%);
+      -webkit-mask-image: radial-gradient(circle at 50% 40%, black 0%, transparent 75%);
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.45; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) scale(1.08); }
+    }
+
+    .stage {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 32px;
+      max-width: 640px;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      display: block;
+      width: min(240px, 60vw);
+      height: auto;
+      margin: 0 auto 14px;
+    }
+
+    .wordmark-sub {
+      font-size: clamp(15px, 3vw, 20px);
+      font-weight: 500;
+      letter-spacing: 0.42em;
+      text-indent: 0.42em; /* compensate tracking so it stays centered */
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 48px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    p.lead {
+      font-size: clamp(15px, 2.4vw, 18px);
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 460px;
+      margin: 0 auto 36px;
+    }
+
+    .cta {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--fg);
+      text-decoration: none;
+      padding: 12px 22px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 10px;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta:hover {
+      border-color: var(--accent);
+      background: rgba(225, 29, 42, 0.08);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(138,138,153,0.7);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 32" role="img" aria-label="Super">
+      <path fill="#fff" d="M2.7 25.04c-2.16-1.93-3-4.16-2.6-6.68a9 9 0 0 1 1.05-3.1q3.86 1.37 7.74 2.66-.43.67-.53 1.33c-.25 1.7 1.65 3 4.83 3.4 2.84.36 4.57-.4 4.75-1.95.15-1.22-.99-2.1-2.51-2.5l-3.8-1c-7.13-1.95-9.96-5.25-9.2-10q.6-3.6 4.05-5.67Q9.94-.52 15.35.18c7.67.96 11.42 4.4 11.27 10.68q-4.03.06-8.07.05c-.02-2.6-1.07-4.2-4.3-4.61-1.95-.26-3.58.4-3.76 1.63q-.26 1.83 3.15 2.74 1.88.53 3.77 1.03c6.62 1.74 9.29 4.6 8.85 9.08a8.3 8.3 0 0 1-4.1 6.47q-3.76 2.31-9.85 1.55-6.4-.8-9.6-3.76m38.64 6.48q-6.56-.42-9.8-3.85c-2.16-2.27-3.01-5.37-2.66-9.24L30.38 2.2q3.93.36 7.85.65l-1.1 15.05c-.28 3.88 1.33 6.17 4.66 6.38s5.21-1.88 5.4-5.76l.75-15.08q3.93.2 7.86.32l-.5 16.29c-.11 3.88-1.33 6.85-3.76 8.85q-3.63 2.99-10.19 2.62m17.74.31.6-27.8q6.49.14 12.97.08c3.15-.03 5.73.8 7.88 2.46a9 9 0 0 1 3.34 6.98q.16 4.46-2.94 7.13-3.16 2.73-8.1 2.8l-5.17.01-.02 8.44q-4.27 0-8.55-.1zm8.59-15.06h3.87q3.8-.04 3.75-3t-3.9-2.92h-3.7zm19.53 14.79L86.08 3.59q10.43-.43 20.84-1.39l.62 6.78q-6.6.6-13.2 1l.23 3.7q5.5-.34 11-.8l.58 6.77q-5.59.48-11.18.83l.22 3.86q7-.42 13.98-1.07.3 3.39.62 6.78-11.27 1.05-22.58 1.51m50.6-12.78 1.15 7.15q-1.07.48-2.45.7c-2.92.44-5.47.23-7.55-.62q-3.21-1.27-5.8-5.88l-.44-.75-2.37.28 1.05 8.8q-4.23.49-8.47.9l-2.78-27.69q6.7-.65 13.4-1.53 4.67-.62 8.15 1.45 3.44 2.1 4.15 6.5c.65 4-1.14 7-4.86 8.66 2.38 2.46 3.76 2.62 5.6 2.3q.56-.1 1.22-.27M118.88 7.5l.67 5.52q2.23-.25 4.45-.54 3.76-.48 3.36-3.27-.38-2.74-4.2-2.23z"/>
+    </svg>
+
+    <div class="wordmark-sub">Technologies</div>
+
+    <h1>We're <span class="accent">crafting</span> the new Super Technologies Hub in Cluj&#8209;Napoca</h1>
+
+    <p class="lead">
+      We're growing our team and have multiple open positions for
+      senior engineers in Cluj-Napoca. Our site is under construction,
+      but we'd love to hear from you now.
+    </p>
+
+    <a class="cta" href="mailto:careers@craftingtechnologies.xyz">Get in touch</a>
+  </main>
+
+  <footer>© <span id="year"></span> Crafting Technologies · craftingtechnologies.xyz</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
